@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://1e0t7piwjq32"]
+[gd_scene load_steps=9 format=3 uid="uid://1e0t7piwjq32"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_mqq6g"]
 [ext_resource type="Script" path="res://ui/hand.gd" id="2_307ol"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="2_bu7xo"]
 [ext_resource type="PackedScene" uid="uid://cyuk2obukfyvc" path="res://Scenes/CardUI/card_ui.tscn" id="2_dg2cy"]
+[ext_resource type="Resource" uid="uid://4w4d2bpcv13e" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="5_qq62s"]
+[ext_resource type="Resource" uid="uid://cgeyhtwtnacbt" path="res://characters/warrior/cards/warrior_block.tres" id="6_dacw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66mso"]
 size = Vector2(256, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqg5p"]
 
 [node name="Battle" type="Node2D"]
 modulate = Color(0.325441, 0.325441, 0.325441, 1)
@@ -22,6 +27,17 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
 position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_66mso")
+debug_color = Color(7.31587e-06, 0.726809, 0.84851, 0.145098)
+
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2(208, 77)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("2_bu7xo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_sqg5p")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -41,9 +57,12 @@ script = ExtResource("2_307ol")
 
 [node name="CardUI" parent="BattleUI/Hand" instance=ExtResource("2_dg2cy")]
 layout_mode = 2
+card = ExtResource("5_qq62s")
 
 [node name="CardUI2" parent="BattleUI/Hand" instance=ExtResource("2_dg2cy")]
 layout_mode = 2
+card = ExtResource("5_qq62s")
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_dg2cy")]
 layout_mode = 2
+card = ExtResource("6_dacw3")
