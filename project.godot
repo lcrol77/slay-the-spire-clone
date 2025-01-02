@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Battle/battle.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
 
+[autoload]
+
+Events="*res://Global/events.gd"
+
 [display]
 
 window/size/viewport_width=256
@@ -26,8 +30,11 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
+"res://Global/": "purple",
 "res://Scenes/": "blue",
-"res://art/": "red"
+"res://art/": "red",
+"res://characters/": "green",
+"res://custom_resources/": "pink"
 }
 
 [input]

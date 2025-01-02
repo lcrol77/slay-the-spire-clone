@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://1e0t7piwjq32"]
+[gd_scene load_steps=10 format=3 uid="uid://1e0t7piwjq32"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_mqq6g"]
 [ext_resource type="Script" path="res://ui/hand.gd" id="2_307ol"]
 [ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="2_bu7xo"]
 [ext_resource type="PackedScene" uid="uid://cyuk2obukfyvc" path="res://Scenes/CardUI/card_ui.tscn" id="2_dg2cy"]
+[ext_resource type="PackedScene" uid="uid://c2tfwx25472kq" path="res://Scenes/CardTargetSelector/card_target_selector.tscn" id="3_cbjq0"]
 [ext_resource type="Resource" uid="uid://4w4d2bpcv13e" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="5_qq62s"]
 [ext_resource type="Resource" uid="uid://cgeyhtwtnacbt" path="res://characters/warrior/cards/warrior_block.tres" id="6_dacw3"]
 
@@ -38,6 +39,8 @@ texture = ExtResource("2_bu7xo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 shape = SubResource("RectangleShape2D_sqg5p")
+
+[node name="CardTargetSelector" parent="." instance=ExtResource("3_cbjq0")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
