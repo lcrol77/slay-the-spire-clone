@@ -35,12 +35,14 @@ folder_colors={
 "res://art/": "red",
 "res://characters/": "green",
 "res://custom_resources/": "pink",
-"res://enemies/": "yellow"
+"res://enemies/": "yellow",
+"res://ui/": "teal"
 }
 
 [global_group]
 
 player=""
+enemies=""
 
 [input]
 
