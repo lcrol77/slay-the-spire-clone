@@ -7,9 +7,13 @@ func enter():
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 	card_ui.panel.set("theme_override_styles/panel", card_ui.CARD_DRAGGING_STYLEBOX)
+	Events.card_drag_started.emit(card_ui)
 	min_drag_time_elapsed = false
 	var thresh_timer := get_tree().create_timer(DRAG_MIN_THRESH, false)
 	thresh_timer.timeout.connect(func(): min_drag_time_elapsed = true)
+
+func exit():
+	Events.card_drag_ended.emit(card_ui)
 
 func on_input(event: InputEvent) -> void:
 	var single_target := card_ui.card.is_single_targeted()
