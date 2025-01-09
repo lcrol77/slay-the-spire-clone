@@ -11,6 +11,10 @@ func _ready() -> void:
 	# between battles
 	var new_stats: CharacterStats = char_stats.create_instance()
 	battle_ui.char_stats = new_stats
+	
+	Events.player_turn_ended.connect(player_handler.end_turn)
+	Events.player_hand_discarded.connect(player_handler.start_turn)
+	
 	start_battle(new_stats)
 
 func start_battle(stats: CharacterStats):
