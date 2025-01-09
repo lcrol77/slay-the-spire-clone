@@ -8,3 +8,6 @@ signal card_aim_ended(card_ui: CardUI)
 signal card_played(card: Card)
 signal card_tooltip_requested(icon: Texture, text: String)
 signal tooltip_hide_requested
+
+# Player-related events
+signal playe_hand_drawn
