@@ -10,10 +10,12 @@ func _ready() -> void:
 		card_ui.parent = self
 		card_ui.reparent_requested.connect(_on_card_ui_reparent_requested)
 
-func _on_card_played() -> void:
+func _on_card_played(_card: Card) -> void:
 	cards_played_this_turn += 1
 
 func _on_card_ui_reparent_requested(child: CardUI):
+	child.disabled = true
 	child.reparent(self)
 	var new_index := clampi(child.original_index - cards_played_this_turn, 0, get_child_count())
 	move_child.call_deferred(child, new_index)
+	child.set_deferred("disabled", false)
