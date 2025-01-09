@@ -8,6 +8,9 @@ const HAND_DISCARD_INTERVAL := 0.25
 
 var character: CharacterStats
 
+func _ready() -> void:
+	Events.card_played.connect(_on_card_played)
+
 func start_battle(char_stats: CharacterStats):
 	character = char_stats
 	character.draw_pile = character.deck.duplicate(true)
@@ -33,6 +36,9 @@ func discard_cards():
 	tween.finished.connect(
 		func(): Events.player_hand_discarded.emit()
 	)
+
+func _on_card_played(card: Card):
+	character.discard.add_card(card)
 
 func reshuffle_deck_from_discard():
 	if not character.draw_pile.empty():
