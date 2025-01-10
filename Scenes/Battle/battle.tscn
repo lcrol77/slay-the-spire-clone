@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/Battle/battle.gd" id="1_sus4h"]
 [ext_resource type="Script" path="res://ui/hand.gd" id="2_307ol"]
 [ext_resource type="PackedScene" uid="uid://ci3x0ioblb0fs" path="res://Scenes/enemy/enemy.tscn" id="2_v5vy1"]
-[ext_resource type="Resource" uid="uid://c6otx1jq56g8a" path="res://enemies/crab/test_enemy.tres" id="3_6ofbb"]
 [ext_resource type="PackedScene" uid="uid://c2tfwx25472kq" path="res://Scenes/CardTargetSelector/card_target_selector.tscn" id="3_cbjq0"]
 [ext_resource type="PackedScene" uid="uid://63vmgyborj3g" path="res://Scenes/player/player.tscn" id="3_lp4fw"]
 [ext_resource type="Resource" uid="uid://d45ifobhu82d" path="res://characters/warrior/warrior.tres" id="4_n5107"]
+[ext_resource type="Resource" uid="uid://c3cpjr3ui5fqc" path="res://enemies/crab/crab_enemy.tres" id="5_52oas"]
 [ext_resource type="Script" path="res://Scenes/ui/battle_ui.gd" id="7_bq2lx"]
 [ext_resource type="Script" path="res://Scenes/player/player_handler.gd" id="8_iq53k"]
 [ext_resource type="PackedScene" uid="uid://6q3h0ymueg5u" path="res://Scenes/ui/mana_ui.tscn" id="11_k54jj"]
@@ -38,7 +38,7 @@ debug_color = Color(7.31587e-06, 0.726809, 0.84851, 0.145098)
 
 [node name="Enemy" parent="." instance=ExtResource("2_v5vy1")]
 position = Vector2(205, 77)
-stats = ExtResource("3_6ofbb")
+stats = ExtResource("5_52oas")
 
 [node name="Player" parent="." instance=ExtResource("3_lp4fw")]
 position = Vector2(44, 77)
