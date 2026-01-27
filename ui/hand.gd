@@ -17,7 +17,6 @@ func add_card(card: Card)-> void:
 	new_card.card = card
 	new_card.parent = self
 	new_card.char_stats = char_stats
-	
 
 func _on_card_played(_card: Card) -> void:
 	cards_played_this_turn += 1
